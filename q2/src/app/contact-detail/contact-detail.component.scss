@@ -1,0 +1,25 @@
+@use "../../variables" as variables;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+$card-width: 400px;
+.contact-card {
+  position: absolute;
+  bottom: 0.7em;
+  left: calc(50% - $card-width / 2);
+  width: $card-width;
+  z-index: 1001;
+  height: 70px;
+}
+
+@media (variables.$mat-small) {
+  .contact-card {
+    width: 100%;
+    left: 0;
+    bottom: 0;
+  }
+}

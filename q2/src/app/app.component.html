@@ -1,0 +1,23 @@
+<mat-toolbar>
+  @if (router.url !== '/') {
+  <a routerLink="/" class="back-and-title flex items-center">
+    <mat-icon>arrow_back_ios</mat-icon>
+    <span>Friends</span>
+  </a>
+  } @else {
+  <span>Nearby Friends</span>
+  }
+
+  <span class="flex-1"> </span>
+
+  <button mat-icon-button disabled>
+    <mat-icon>language</mat-icon>
+  </button>
+  <button mat-icon-button type="button" disabled>
+    <mat-icon>light_mode</mat-icon>
+  </button>
+</mat-toolbar>
+
+<main class="flex-1 overflow-auto">
+  <router-outlet />
+</main>

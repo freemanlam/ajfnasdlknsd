@@ -1,0 +1,17 @@
+@if (contact()) {
+<img
+  [src]="contact()!.picture"
+  class="avatar"
+  [style.viewTransitionName]="viewTransitionName(contact()!)"
+  loading="lazy"
+/>
+<div>
+  <h1 class="leading-none font-semibold">
+    {{ contact()!.name.first }} {{ contact()!.name.last }}
+  </h1>
+  <p class="text-sm">{{ contact()!.email }}</p>
+</div>
+<span class="flex-1"></span>
+@if (displayDistance()) {<span class="text-gray-400"
+  >{{ displayDistance() }}km</span
+>} }

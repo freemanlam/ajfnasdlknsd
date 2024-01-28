@@ -1,0 +1,26 @@
+<div class="contact-card flex gap-4 p-4 bg-white mat-elevation-z4">
+  <div class="avatar-img w-10">
+    <img [src]="contact()!.picture" class="avatar" />
+  </div>
+  <div class="flex-1">
+    <h1 class="leading-none font-semibold">
+      {{ contact()!.name.first }} {{ contact()!.name.last }}
+    </h1>
+    <p class="text-xs">{{ contact()!.email }}</p>
+    <p class="text-xs">
+      {{ contact()!.location.latitude }}, {{ contact()!.location.longitude }}
+      @if (displayDistance()) {
+      <span>({{ displayDistance() }}km)</span>
+      }
+    </p>
+  </div>
+</div>
+
+@if (showMap()) {
+<div
+  class="map flex-1"
+  leaflet
+  contactDetailMap
+  [leafletOptions]="options"
+></div>
+}

@@ -1,0 +1,68 @@
+/* You can add global styles to this file, and also import other style files */
+
+$skeleton-circle-size: 38px !default;
+@import "skeleton-screen-css/dist/index.scss";
+
+html,
+body {
+  height: 100dvh;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.avatar {
+  border-radius: 50%;
+  height: 100%;
+  aspect-ratio: 1;
+}
+
+.avatar-img img {
+  view-transition-name: avatar-img;
+  contain: layout;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slide-from-right {
+  from {
+    transform: translateX(30px);
+  }
+}
+
+@keyframes slide-to-left {
+  to {
+    transform: translateX(-30px);
+  }
+}
+
+::view-transition-old(root) {
+  animation: 90ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
+    300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left;
+}
+
+::view-transition-new(root) {
+  animation: 210ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
+    300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
+}
+
+::view-transition-old(avatar-img),
+::view-transition-new(avatar-img) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-image-pair(avatar-img) {
+  isolation: none;
+}
