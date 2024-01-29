@@ -10,7 +10,6 @@ import {
 import { Contact } from '../contacts/contact';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import * as Leaflet from 'leaflet';
-import { MatButtonModule } from '@angular/material/button';
 import { getLayers, isValidLatLng } from './map-options';
 import { environment } from '../../environments/environment';
 import { GeolocationService } from '../geolocation/geolocation.service';
@@ -18,7 +17,7 @@ import { GeolocationService } from '../geolocation/geolocation.service';
 @Component({
   selector: 'contact-detail',
   standalone: true,
-  imports: [LeafletModule, MatButtonModule],
+  imports: [LeafletModule],
   templateUrl: './contact-detail.component.html',
   styleUrl: './contact-detail.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
