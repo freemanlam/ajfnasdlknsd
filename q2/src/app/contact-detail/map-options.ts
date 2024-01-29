@@ -9,15 +9,12 @@ export const isValidLatLng = (contact: Contact) =>
 export const getLayers = (
   contact: Contact,
   center: Leaflet.LatLng,
-  isValidLatLng: boolean
+  isValidLatLng: boolean,
 ): Leaflet.Layer[] => {
   return [
-    new Leaflet.TileLayer(
-      'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-      {
-        attribution: '&copy; OpenStreetMap contributors',
-      } as Leaflet.TileLayerOptions
-    ),
+    new Leaflet.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors',
+    } as Leaflet.TileLayerOptions),
     getMarkers(contact, center, isValidLatLng),
   ] as Leaflet.Layer[];
 };
@@ -25,7 +22,7 @@ export const getLayers = (
 export const getMarkers = (
   contact: Contact,
   center: Leaflet.LatLng,
-  isValidLatLng: boolean
+  isValidLatLng: boolean,
 ): Leaflet.Marker | Leaflet.Popup => {
   if (!isValidLatLng) {
     return new Leaflet.Popup(center, {

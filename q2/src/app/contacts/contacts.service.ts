@@ -15,9 +15,7 @@ export class ContactsService {
 
   getContacts(): Observable<ContactsRsp> {
     return this.http
-      .get<ContactsRsp>(
-        'https://api.json-generator.com/templates/-xdNcNKYtTFG/data'
-      )
+      .get<ContactsRsp>('https://api.json-generator.com/templates/-xdNcNKYtTFG/data')
       .pipe(
         // Get cache when API not working
         catchError((err, caught) => {
@@ -33,7 +31,7 @@ export class ContactsService {
           // fallback, sometimes this api will return 429
           this.setCache(res);
           this._loaded.set(true);
-        })
+        }),
       );
   }
 

@@ -10,17 +10,12 @@
     <p class="text-xs">
       {{ contact()!.location.latitude }}, {{ contact()!.location.longitude }}
       @if (displayDistance()) {
-      <span>({{ displayDistance() }}km)</span>
+        <span>({{ displayDistance() }}km)</span>
       }
     </p>
   </div>
 </div>
 
 @if (showMap()) {
-<div
-  class="map flex-1"
-  leaflet
-  contactDetailMap
-  [leafletOptions]="options"
-></div>
+  <div class="map flex-1" leaflet contactDetailMap [leafletOptions]="options"></div>
 }

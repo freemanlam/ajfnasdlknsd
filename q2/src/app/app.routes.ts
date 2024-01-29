@@ -13,18 +13,14 @@ export const routes: Routes = [
     canMatch: [
       () => {
         const contactsService = inject(ContactsService);
-        return toObservable(contactsService.loaded).pipe(
-          filter((loaded) => loaded)
-        );
+        return toObservable(contactsService.loaded).pipe(filter((loaded) => loaded));
       },
     ],
     resolve: {
       contact: async (route: ActivatedRouteSnapshot) => {
         const contactsService = inject(ContactsService);
         const contactId = route.params['id'];
-        return contactsService
-          .contacts()
-          .find((contact) => contact._id === contactId);
+        return contactsService.contacts().find((contact) => contact._id === contactId);
       },
     },
   },

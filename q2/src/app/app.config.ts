@@ -1,9 +1,5 @@
 import { ApplicationConfig, isDevMode } from '@angular/core';
-import {
-  provideRouter,
-  withComponentInputBinding,
-  withViewTransitions,
-} from '@angular/router';
+import { provideRouter, withComponentInputBinding, withViewTransitions } from '@angular/router';
 import { routes } from './app.routes';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { tokenInterceptor } from './contacts/token.interceptor';
@@ -16,7 +12,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(
       routes,
       withComponentInputBinding(),
-      withViewTransitions({ onViewTransitionCreated })
+      withViewTransitions({ onViewTransitionCreated }),
     ),
     provideHttpClient(withInterceptors([tokenInterceptor])),
     provideAnimations(),

@@ -43,9 +43,7 @@ export class ContactDetail implements OnInit {
    * Display in km
    */
   displayDistance = computed(() => {
-    const val = this.distance()
-      ? Math.round(this.distance()! / 100) / 10
-      : null;
+    const val = this.distance() ? Math.round(this.distance()! / 100) / 10 : null;
     return val;
   });
 
@@ -62,13 +60,10 @@ export class ContactDetail implements OnInit {
   loadMap() {
     const _isValidLatLng = isValidLatLng(this.contact()!);
     const center = _isValidLatLng
-      ? new Leaflet.LatLng(
-          this.contact()!.location.latitude!,
-          this.contact()!.location.longitude!
-        )
+      ? new Leaflet.LatLng(this.contact()!.location.latitude!, this.contact()!.location.longitude!)
       : new Leaflet.LatLng(
           environment.map.fallbackLocation[0],
-          environment.map.fallbackLocation[1]
+          environment.map.fallbackLocation[1],
         );
     this.options = {
       layers: getLayers(this.contact()!, center, _isValidLatLng),

@@ -4,13 +4,10 @@ import { environment } from '../../environments/environment';
 
 export function tokenInterceptor(
   req: HttpRequest<unknown>,
-  next: HttpHandlerFn
+  next: HttpHandlerFn,
 ): Observable<HttpEvent<unknown>> {
   const newReq = req.clone({
-    headers: req.headers.append(
-      'Authorization',
-      `Bearer ${environment.authToken}`
-    ),
+    headers: req.headers.append('Authorization', `Bearer ${environment.authToken}`),
   });
   return next(newReq);
 }

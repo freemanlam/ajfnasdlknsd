@@ -1,10 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  computed,
-  inject,
-  input,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, input } from '@angular/core';
 import { Contact } from '../contacts/contact';
 import { CurrentTransitionService } from '../transitions/current-transition.service';
 import { isValidLatLng } from '../contact-detail/map-options';
@@ -40,9 +34,7 @@ export class ContactItem {
    * Display in km
    */
   displayDistance = computed(() => {
-    const val = this.distance()
-      ? Math.round(this.distance()! / 100) / 10
-      : null;
+    const val = this.distance() ? Math.round(this.distance()! / 100) / 10 : null;
     return val;
   });
 

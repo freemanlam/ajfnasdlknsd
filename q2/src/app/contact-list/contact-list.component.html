@@ -1,12 +1,11 @@
 @if (loaded()) {
-<cdk-virtual-scroll-viewport itemSize="70" class="h-full">
-  <a
-    *cdkVirtualFor="let contact of contacts()"
-    [routerLink]="'/' + contact._id"
-  >
-    <contact-item [contact]="contact" />
-  </a>
-</cdk-virtual-scroll-viewport>
-} @else { @for (_ of skeletons; track _) {
-<contact-item-skeleton />
-} }
+  <cdk-virtual-scroll-viewport itemSize="70" class="h-full">
+    <a *cdkVirtualFor="let contact of contacts()" [routerLink]="'/' + contact._id">
+      <contact-item [contact]="contact" />
+    </a>
+  </cdk-virtual-scroll-viewport>
+} @else {
+  @for (_ of skeletons; track _) {
+    <contact-item-skeleton />
+  }
+}
