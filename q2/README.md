@@ -1,5 +1,7 @@
 # Q2 - "Nearby Friends"
 
+Live demo: [https://test-ajfnasdlknsd.web.app](https://test-ajfnasdlknsd.web.app)
+
 This is a SPA aim to showing your friends' location.
 
 To get started, run `yarn` to install and `yarn start`.
