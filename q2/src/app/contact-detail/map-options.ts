@@ -35,5 +35,8 @@ export const getMarkers = (
 
   return new Leaflet.Marker(center, {
     title: `${contact.name.first} ${contact.name.last}`,
+    icon: Leaflet.icon({
+      iconUrl: '../assets/marker-icon.png',
+    }),
   });
 };
