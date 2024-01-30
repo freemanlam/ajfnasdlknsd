@@ -1,14 +1,20 @@
-# Q2 - "Nearby Friends"
+# Test
+
+## Q1
+
+Run `node q1/index.js`, check console log and assertion result
+
+## Q2 - "Nearby Friends"
 
 Live demo: [https://test-ajfnasdlknsd.web.app](https://test-ajfnasdlknsd.web.app)
 
 This is a SPA aim to showing your friends' location.
 
-To get started, run `yarn` to install and `yarn start`.
+To get started, run `cd q2`, `yarn` and `yarn start`.
 
 ![PWA](./docs/recording.gif)
 
-## Features
+### Features
 
 - Showing friend location and fallback message if location is incomplete / unknown
 - Responsive design for desktop, tablet and mobile
@@ -28,7 +34,7 @@ To get started, run `yarn` to install and `yarn start`.
 - Page transition with view transition API
 - Showing distance between your location and the contact, via geolocation API
 
-## Tech Used
+### Tech Used
 
 - [TypeScript 5.3](https://www.typescriptlang.org/)
 - [Angular 17](https://angular.dev/) with standalone component (moduleless) and signal
